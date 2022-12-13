@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/Product.php";
+require_once __DIR__ . "/../Traits/Size.php";
 
 class Accessory extends Product
 {
@@ -9,8 +10,5 @@ class Accessory extends Product
         $this->size = $size;
     }
 
-    public function getSize()
-    {
-        return $this->size;
-    }
+    use Size;
 }

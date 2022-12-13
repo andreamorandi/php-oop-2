@@ -22,8 +22,9 @@ class Customer
             ($this->paymentMethod->getExpirationYear() === date("Y") && $this->paymentMethod->getExpirationMonth() <= date("m"))
         ) {
             return "La carta è valida. Tutto Pagato!";
+        } else {
+            throw new Exception("Errore di pagamento, la carta è scaduta.");
         }
-        return "Errore di pagamento, la carta è scaduta.";
     }
 
     public function getName()

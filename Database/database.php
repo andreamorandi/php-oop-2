@@ -23,10 +23,5 @@ $coperta_disney = new Accessory('Coperta Disney', 'https://www.bauzaar.it/media/
 $products = [$pandoro_cani, $cuccetta_natalizia, $cerchietto_natale, $cannetta_natalizia, $osso_natalizio, $coperta_disney];
 
 $guest = new Customer("Andrea", "andrea@gmail.com");
-$guest->basket = new ShoppingBasket();
-$guest->basket->add($pandoro_cani);
-$guest->basket->add($osso_natalizio);
-$total = $guest->basket->getTotal();
 
-$guest->insertCreditCard(new CreditCard("2364762378462387", "123", "12", "2023"));
-$result = $guest->pay($total);
+$credit_card = new CreditCard("2364762378462387", "123", "12", "2023");
