@@ -3,13 +3,7 @@ require_once __DIR__ . "/Category.php";
 
 class Product
 {
-    private $title;
-    private $image;
-    private $price;
-    private $categories;
-    private $type;
-
-    public function __construct(String $title, String $image, float $price, array $categories, String $type)
+    public function __construct(private String $title, private String $image, private float $price, private array $categories, private String $type)
     {
         $this->title = $title;
         $this->image = $image;
@@ -37,9 +31,9 @@ class Product
     {
         $icons = "";
         foreach ($this->categories as $category) {
-            if ($category->getName() === "Cani") {
+            if ($category->getName() === "cani") {
                 $icons .= '<i class="fa-solid fa-dog"></i>';
-            } else if ($category->getName() === "Gatti") {
+            } else if ($category->getName() === "gatti") {
                 $icons .= '<i class="fa-solid fa-cat"></i>';
             }
         }

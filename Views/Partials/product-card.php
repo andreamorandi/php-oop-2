@@ -5,9 +5,19 @@
         <p class="card-text">
             Categoria: <?php echo $product->getCategoriesAsIcons() ?>
         </p>
-        <p class="card-text">
-            Tipo: <?php echo $product->getType() ?>
-        </p>
+        <?php if (get_class($product) === "Toy") { ?>
+            <p class="card-text">Tipologia: Giochi</p>
+            <p class="card-text">Materiale: <?php echo $product->getMaterial() ?></p>
+        <?php } else if (get_class($product) === "Food") { ?>
+            <p class="card-text">Tipologia: Cibo</p>
+            <p class="card-text">Peso: <?php echo $product->getWeight() ?></p>
+        <?php } else if (get_class($product) === "Bed") { ?>
+            <p class="card-text">Tipologia: Cucce</p>
+            <p class="card-text">Dimensioni: <?php echo $product->getSize() ?></p>
+        <?php } else if (get_class($product) === "Accessory") { ?>
+            <p class="card-text">Tipologia: Accessori</p>
+            <p class="card-text">Dimensioni: <?php echo $product->getSize() ?></p>
+        <?php } ?>
         <p class="card-text">
             Prezzo: <?php echo $product->getPrice() ?> €
         </p>

@@ -2,9 +2,7 @@
 
 class Category
 {
-    private $name;
-
-    public function __construct(String $name)
+    public function __construct(private String $name)
     {
         $this->name = $name;
     }
